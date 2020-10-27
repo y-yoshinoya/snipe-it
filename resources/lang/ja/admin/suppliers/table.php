@@ -21,7 +21,7 @@ return array(
     'update'                => '仕入先を更新',
     'url'                   => 'URL',
     'view'                  => '仕入先を表示',
-    'view_assets_for'       => '資産を表示',
+    'view_assets_for'       => '資産状況',
     'zip'                   => '郵便番号',
 
 );

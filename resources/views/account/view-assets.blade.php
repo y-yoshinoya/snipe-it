@@ -2,7 +2,7 @@
 
 {{-- Page title --}}
 @section('title')
-View Assets for  {{ $user->present()->fullName() }}
+{{ trans('admin/suppliers/table.view_assets_for') }} ({{ $user->present()->fullName() }})
 @parent
 @stop
 
@@ -16,7 +16,7 @@ View Assets for  {{ $user->present()->fullName() }}
         @if ($user->id)
           <div class="box-header with-border">
             <div class="box-heading">
-              <h2 class="box-title"> {{ trans('admin/users/general.assets_user', array('name' => $user->first_name)) }}</h2>
+              <h2 class="box-title"> {{ trans('admin/users/general.assets_user', array('name' => $user->present()->fullName())) }}</h2>
             </div>
           </div><!-- /.box-header -->
         @endif
@@ -127,7 +127,7 @@ View Assets for  {{ $user->present()->fullName() }}
       @if ($user->id)
         <div class="box-header with-border">
           <div class="box-heading">
-            <h2 class="box-title"> {{ trans('admin/users/general.software_user', array('name' => $user->first_name)) }}</h2>
+            <h2 class="box-title"> {{ trans('admin/users/general.software_user', array('name' => $user->present()->fullName())) }}</h2>
           </div>
         </div><!-- /.box-header -->
       @endif

@@ -307,7 +307,7 @@
                       <i class="fa fa-user fa-fws" aria-hidden="true"></i>
                    @endif
 
-                   <span class="hidden-xs">{{ Auth::user()->first_name }} <strong class="caret"></strong></span>
+                   <span class="hidden-xs">{{ Auth::user()->last_name }} {{ Auth::user()->first_name }}<strong class="caret"></strong></span>
                  </a>
                  <ul class="dropdown-menu">
                    <!-- User image -->
@@ -391,7 +391,7 @@
             @can('admin')
             <li {!! (\Request::route()->getName()=='home' ? ' class="active"' : '') !!}>
               <a href="{{ route('home') }}">
-                <i class="fa fa-dashboard" aria-hidden="true"></i> <span>Dashboard</span>
+                <i class="fa fa-dashboard" aria-hidden="true"></i> <span>{{ trans('general.dashboard') }}</span>
               </a>
             </li>
             @endcan

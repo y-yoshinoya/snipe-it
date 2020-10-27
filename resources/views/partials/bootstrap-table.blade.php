@@ -4,6 +4,8 @@
 
 @push('js')
 <script src="{{ asset(mix('js/dist/bootstrap-table.js')) }}"></script>
+<script src="{{ asset(mix('js/dist/bootstrap-table-ja-JP.js')) }}"></script>
+
 <script nonce="{{ csrf_token() }}">
 
     $(function () {
