@@ -9,6 +9,8 @@ use Exception;
 use App\Models\User;
 use App\Services\LdapAd;
 use App\Models\Location;
+use App\Helpers\Helper;
+use Config;
 use Illuminate\Console\Command;
 use Adldap\Models\User as AdldapUser;
 
@@ -189,6 +191,12 @@ class LdapSync extends Command
             'email'           => $user->email,
             'location_id'     => $user->location_id,
         ];
+        $permissions = config('permissions');
+        $permissions_array = Helper::selectedPermissionsArray($permissions);
+        if ($user->wasRecentlyCreated) {
+	    $user->permissions =  json_encode($permissions_array);
+        }
+
         // Only update the database if is not a dry run
         if (!$this->dryrun) {
             if ($user->isDirty()) { //if nothing on the user changed, don't bother trying to save anything nor put anything in the summary
