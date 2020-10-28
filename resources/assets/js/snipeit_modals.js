@@ -117,7 +117,7 @@ $(function () {
                 return false;
             }
             var id = result.payload.id;
-            var name = result.payload.name || (result.payload.first_name + " " + result.payload.last_name);
+            var name = result.payload.name || (result.payload.last_name + " " + result.payload.first_name);
             if(!id || !name) {
                 console.error("Could not find resulting name or ID from modal-create. Name: "+name+", id: "+id);
                 return false;

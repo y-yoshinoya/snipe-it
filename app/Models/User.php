@@ -228,7 +228,7 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
      */
     public function getFullNameAttribute()
     {
-        return $this->first_name . " " . $this->last_name;
+        return $this->last_name . " " . $this->first_name;
     }
 
     /**
